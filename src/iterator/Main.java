@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import adapter.InvertedIterator;
 import domain.Covid19Pacient;
 import domain.Symptom;
 
@@ -13,15 +14,16 @@ import domain.Symptom;
 
 		public static void main(String[] args) {
 			Covid19Pacient p=new Covid19Pacient("Ane", 29);
-			p.addSymptom(new Symptom("s1", 10, 10), 1);
-			p.addSymptom(new Symptom("s2", 10, 10), 2);
-			p.addSymptom(new Symptom("s3", 10, 10), 3);
-			p.addSymptom(new Symptom("s4", 10, 10), 4);
-			p.addSymptom(new Symptom("s5", 10, 10), 5);
+			p.addSymptom(new Symptom("s1", 10, 4), 1);
+			p.addSymptom(new Symptom("s2", 10, 2), 2);
+			p.addSymptom(new Symptom("s3", 10, 3), 3);
+			p.addSymptom(new Symptom("s4", 10, 1), 4);
+			p.addSymptom(new Symptom("s5", 10, 5), 5);
 			
-			Iterator i=p.iterator();
-			while(i.hasNext())
-				System.out.println(i.next());
+			InvertedIterator i=new Covid19PacientAdapter(p);
+			i.goLast();
+			while(i.hasPrevious())
+				System.out.println(i.previous());
 
 		}
 
