@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import domain.Symptom;
 
-public class ComSevIndex  implements Comparator{
+public class ComSevIndex  implements Comparator<Object>{
 
 	@Override
 	public int compare(Object o1, Object o2) {
