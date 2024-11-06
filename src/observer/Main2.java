@@ -4,7 +4,7 @@ import java.util.Observable;
 
 import domain.Covid19Pacient;
 
-public class Main {
+public class Main2 {
 
 	/**
 	 * Launch the application.
